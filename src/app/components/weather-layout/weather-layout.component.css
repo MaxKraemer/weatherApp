@@ -68,7 +68,7 @@ img:hover {
     font-weight: 700;
     @media screen and (max-width: 768px) {
         align-items: center;
- 
+
     }
 }
 
@@ -145,7 +145,7 @@ input {
     flex-shrink: 0;
     margin-right: 10px;
     border-radius: 10px;
-    background: #fff;   
+    background: #fff;
     color: #000;
     text-align: right;
     font-family: Montserrat;
@@ -153,17 +153,14 @@ input {
     font-style: normal;
     font-weight: 600;
     line-height: normal;
-    text-align: center;    
+    text-align: center;
     border: none;
-    &:hover {
-        transition: all 0.2s ease-in-out;
-    }
 }
 
 button {
     width: 100px;
     height: 53px;
-    background: linear-gradient(131deg, rgba(144, 217, 224, 0.90) 0%, rgba(84, 96, 230, 0.90) 100%);   
+    background: linear-gradient(131deg, rgba(144, 217, 224, 0.90) 0%, rgba(84, 96, 230, 0.90) 100%);
     color: #FFF;
     border-radius: 10px;
     border: none;
