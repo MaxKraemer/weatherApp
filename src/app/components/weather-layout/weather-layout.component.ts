@@ -17,10 +17,13 @@ export class WeatherLayoutComponent implements OnInit {
     this.getWeatherData();
   }
 
-  private getWeatherData() {
-    this.weatherService.getConfig().subscribe((data) => {
-      this.weatherData = data;
-      console.log(this.weatherData, 'weatherData');     
-    });
-  }
+private getWeatherData(): void {
+  this.weatherService.getWeatherByCityName('London').subscribe((data) => {
+    this.weatherData = data;
+    this.data = this.weatherData;
+    console.log(this.data, 'data');
+  });
+}
+
+
 }
