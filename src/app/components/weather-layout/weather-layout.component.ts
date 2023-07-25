@@ -9,41 +9,51 @@ import { WeatherService } from 'src/app/service/weather.service';
 export class WeatherLayoutComponent implements OnInit {
 
   constructor(public weatherService: WeatherService) { }
-
+ 
   public weatherData: any = [];
   public data: any = [];
   public currentCity: string = '';
 
 
   ngOnInit(): void {
-    this.getWeatherData('london');
+    this.getWeatherData('Düsseldorf');
   }
 
-public getWeatherData(cityName: string): void {
-  this.weatherService.getWeatherByCityName(cityName.toLowerCase()).subscribe((data) => {
-    this.weatherData = data;
-    this.data = this.weatherData;
-    console.log(this.data, 'data');
-  });
-}
-
-public onKeyPress(event: KeyboardEvent): void {
-  if (event.key === 'Enter') {
-    event.preventDefault();
-    this.getWeatherData(this.currentCity);
+/**
+ * @param cityName 
+ * @returns get the weather data from the api
+ */
+  public getWeatherData(cityName: string): void {
+    this.weatherService.getWeatherByCityName(cityName.toLowerCase()).subscribe((data) => {
+      this.weatherData = data;
+      this.data = this.weatherData;
+      console.log(this.data, 'data');
+    });
   }
-}
 
-public setIcon(): any {
-  if(this.weatherData.weather[0].main === 'Clouds') {
-    return 'assets/cloudy.png';
-  } else if (this.weatherData.weather[0].main === 'Rain') {
-    return 'assets/heavy-rain.png';
-} else if (this.weatherData.weather[0].main === 'Clear') {
-  return 'assets/sun.png';
-} else if (this.weatherData.weather[0].main === 'Snow') {
-  return 'assets/snow.png';
-}
+  /**
+   * @param event
+   * @returns get the value of the input field
+   */
+  public onKeyPress(event: KeyboardEvent): void {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      this.getWeatherData(this.currentCity);
+    }
+  }
 
-}
+  /**
+   * @returns change the icon depending on the weather
+   */
+  public setIcon(): any {
+    if(this.weatherData.weather[0].main === 'Clouds') {
+      return 'assets/cloudy.png';
+    } else if (this.weatherData.weather[0].main === 'Rain') {
+      return 'assets/heavy-rain.png';
+    } else if (this.weatherData.weather[0].main === 'Clear') {
+      return 'assets/sun.png';
+    } else if (this.weatherData.weather[0].main === 'Snow') {
+      return 'assets/snow.png';
+    }
+  }
 }
