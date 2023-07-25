@@ -8,6 +8,10 @@
 .weather-field {
     display: flex;
     justify-content: center;
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .weather-box-one {
@@ -23,6 +27,10 @@
     border-radius: 10px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
     transition: transform 250ms;
+    @media screen and (max-width: 768px) {
+        width: 400px;
+        height: 400px;
+    }
 }
 
 .info-container {
@@ -35,10 +43,18 @@
     padding-bottom: 30%;
     font-size: 40px;
     font-weight: 700;
+    @media screen and (max-width: 768px) {
+        padding-bottom: 15%;
+        align-items: center;
+    }
 }
 
 img {
     height: 150px;
+}
+img:hover {
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.1);
 }
 
 .content-container {
@@ -48,6 +64,10 @@ img {
     flex-direction: column;
     font-size: 40px;
     font-weight: 700;
+    @media screen and (max-width: 768px) {
+        align-items: center;
+ 
+    }
 }
 
 .location-box {
@@ -60,7 +80,7 @@ img {
     justify-content: flex-start;
     flex-direction: column;
     padding: 40px;
-    height: 400px;
+    height: 350px;
     width: 400px;
     backdrop-filter: blur(10px);
     background-color: #2d2d57;
@@ -122,8 +142,8 @@ input {
     flex-shrink: 0;
     margin-right: 10px;
     border-radius: 10px;
-    background: linear-gradient(131deg, rgba(144, 217, 224, 0.90) 0%, rgba(84, 96, 230, 0.90) 100%);   
-    color: #FFF;
+    background: #fff;   
+    color: #000;
     text-align: right;
     font-family: Montserrat;
     font-size: 20px;
@@ -132,7 +152,9 @@ input {
     line-height: normal;
     text-align: center;    
     border: none;
-    cursor: pointer;
+    &:hover {
+        transition: all 0.2s ease-in-out;
+    }
 }
 
 button {
@@ -142,9 +164,10 @@ button {
     color: #FFF;
     border-radius: 10px;
     border: none;
+    cursor: pointer;
 }
 
 ::placeholder {
-    color: #FFF;
+    color: #000;
     opacity: 1;
 }

@@ -23,33 +23,15 @@
                         <div class="title">PRECIPITATION</div>
                         <div class="date">HUMIDITY</div>
                         <div class="location">WIND</div>
+                        <div class="feels-like">FELLS LIKE</div>
+                        <div class="min-temp">MIN. TEMP.</div>
                     </div>
                     <div class="information-box">
                         <div class="title">0%</div>
                         <div class="date">{{weatherData.main.humidity}} %</div>
                         <div class="location">{{weatherData.wind.speed}} km/h</div>
-                    </div>
-                </div>
-                <div class="weather-prospects">
-                    <div class="weather-prospects-box-one">
-                        <div class="weather-icon"><span class="material-symbols-outlined icon-size">partly_cloudy_day</span></div>
-                        <div class="weather-day">Tue</div>
-                        <div class="weather-degree">29°C</div>
-                    </div>
-                    <div class="weather-prospects-box-two">
-                        <div class="weather-icon"><span class="material-symbols-outlined icon-size">partly_cloudy_day</span></div>
-                        <div class="weather-day">Tue</div>
-                        <div class="weather-degree">29°C</div>
-                    </div>
-                    <div class="weather-prospects-box-three">
-                        <div class="weather-icon"><span class="material-symbols-outlined icon-size">partly_cloudy_day</span></div>
-                        <div class="weather-day">Tue</div>
-                        <div class="weather-degree">29°C</div>
-                    </div>
-                    <div class="weather-prospects-box-four">
-                        <div class="weather-icon"><span class="material-symbols-outlined icon-size">partly_cloudy_day</span></div>
-                        <div class="weather-day">Tue</div>
-                        <div class="weather-degree">29°C</div>
+                        <div class="feels-like">{{weatherData.main.feels_like | number: '1.0-0'}}°C</div>
+                        <div class="feels-like">{{weatherData.main.temp_min | number: '1.0-0'}}°C</div>
                     </div>
                 </div>
                 <div class="search-location">
