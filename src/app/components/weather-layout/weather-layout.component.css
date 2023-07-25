@@ -37,6 +37,10 @@
     font-weight: 700;
 }
 
+img {
+    height: 150px;
+}
+
 .content-container {
     display: flex;
     justify-content: flex-start;
@@ -105,13 +109,18 @@
     padding-top: 50px;
 }
 
+.change-location {
+    display: flex;
+}
+
 input {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 90%;
     height: 53px;
     flex-shrink: 0;
+    margin-right: 10px;
     border-radius: 10px;
     background: linear-gradient(131deg, rgba(144, 217, 224, 0.90) 0%, rgba(84, 96, 230, 0.90) 100%);   
     color: #FFF;

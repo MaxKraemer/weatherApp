@@ -27,5 +27,23 @@ public getWeatherData(cityName: string): void {
   });
 }
 
+public onKeyPress(event: KeyboardEvent): void {
+  if (event.key === 'Enter') {
+    event.preventDefault();
+    this.getWeatherData(this.currentCity);
+  }
+}
 
+public setIcon(): any {
+  if(this.weatherData.weather[0].main === 'Clouds') {
+    return 'assets/cloudy.png';
+  } else if (this.weatherData.weather[0].main === 'Rain') {
+    return 'assets/heavy-rain.png';
+} else if (this.weatherData.weather[0].main === 'Clear') {
+  return 'assets/sun.png';
+} else if (this.weatherData.weather[0].main === 'Snow') {
+  return 'assets/snow.png';
+}
+
+}
 }
