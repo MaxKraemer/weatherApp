@@ -27,7 +27,7 @@
 .info-container {
     font-size: 40px;
     font-weight: 700;
-    padding-bottom: 78%;
+    padding-bottom: 74%;
     font-size: 40px;
     font-weight: 700;
 }
@@ -37,11 +37,16 @@
     font-weight: 700;
 }
 
+.location-box {
+    display: flex;
+    margin-right: 10px;
+}
+
 .weather-box-two {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
     flex-direction: column;
+    padding: 40px;
     width: 700px;
     height: 500px;
     opacity: 0.8;
@@ -56,4 +61,22 @@
 .information-container {
     font-size: 40px;
     font-weight: 700;
+}
+
+button {
+    width: 415px;
+    height: 53px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: linear-gradient(131deg, rgba(144, 217, 224, 0.90) 0%, rgba(84, 96, 230, 0.90) 100%);   
+    color: #FFF;
+    text-align: right;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-align: center;    
+    border: none;
+    cursor: pointer;
 }
