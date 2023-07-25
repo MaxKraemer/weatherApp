@@ -3,17 +3,17 @@
         <div class="weather-box-one">
             <div class="info-container">
                 <div class="title">Tuesday</div>
-                <div class="date">{{this.weatherData.current_weather.time}}</div>
+                <div class="date"></div>
                 <div class="location-box">
                     <div class="location-icon">
                         <span style="font-size: 35px;" class="material-symbols-outlined">location_on</span></div>
-                    <div class="location">Düsseldorf</div>
+                    <div class="location">{{weatherData.name}}</div>
                 </div>
                
             </div>
             <div class="content-container">
                 <div class="weather-icon"><span style="font-size: 70px;" class="material-symbols-outlined">wb_sunny</span></div>
-                <div class="weather-degree"></div>{{this.weatherData.main.temp}}°C
+                <div class="weather-degree"></div>°C
                 <div class="weather-info">Sunny</div>
             </div>
         </div>
@@ -27,7 +27,7 @@
                     <div class="information-box">
                         <div class="title">0%</div>
                         <div class="date">42%</div>
-                        <div class="location">{{this.weatherData.current_weather.windspeed}} km/h</div>
+                        <div class="location"> km/h</div>
                     </div>
                 </div>
                 <div class="weather-prospects">
@@ -54,7 +54,8 @@
                 </div>
                 <div class="search-location">
                     <div class="change-location">
-                        <input type="text" placeholder="Search Location">
+                        <input type="text" placeholder="Search Location" [(ngModel)]="currentCity">
+                        <button (click)="getWeatherData(currentCity)">Search</button>
                     </div>
                 </div>
         </div>

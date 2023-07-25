@@ -126,6 +126,15 @@ input {
     cursor: pointer;
 }
 
+button {
+    width: 100px;
+    height: 53px;
+    background: linear-gradient(131deg, rgba(144, 217, 224, 0.90) 0%, rgba(84, 96, 230, 0.90) 100%);   
+    color: #FFF;
+    border-radius: 10px;
+    border: none;
+}
+
 ::placeholder {
     color: #FFF;
     opacity: 1;

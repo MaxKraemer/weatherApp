@@ -12,7 +12,7 @@ export class WeatherService {
 
   constructor(private http: HttpClient) { }
 
-  getWeatherByCityName(cityName: string): Observable<any> {
+  public getWeatherByCityName(cityName: string): Observable<any> {
     const configUrl = `${this.apiUrl}?q=${cityName}&appid=${this.apiKey}&units=metric`;
     return this.http.get(configUrl);
   }

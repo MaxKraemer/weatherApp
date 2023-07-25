@@ -12,13 +12,15 @@ export class WeatherLayoutComponent implements OnInit {
 
   public weatherData: any = [];
   public data: any = [];
+  public currentCity: string = '';
+
 
   ngOnInit(): void {
-    this.getWeatherData();
+    this.getWeatherData('london');
   }
 
-private getWeatherData(): void {
-  this.weatherService.getWeatherByCityName('London').subscribe((data) => {
+public getWeatherData(cityName: string): void {
+  this.weatherService.getWeatherByCityName(cityName.toLowerCase()).subscribe((data) => {
     this.weatherData = data;
     this.data = this.weatherData;
     console.log(this.data, 'data');
