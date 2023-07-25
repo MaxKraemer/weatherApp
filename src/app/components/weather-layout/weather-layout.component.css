@@ -1,0 +1,59 @@
+.weather-container {
+    position: absolute;
+    top: 12%;
+    left: 24%;
+}
+.weather-field {
+    display: flex;
+    justify-content: center;
+}
+
+.weather-box-one {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 40px;
+    width: 493px;
+    height: 666px;
+    opacity: 0.8;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+    transition: transform 250ms;
+}
+
+.info-container {
+    font-size: 40px;
+    font-weight: 700;
+    padding-bottom: 78%;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.content-container {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.weather-box-two {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 700px;
+    height: 500px;
+    opacity: 0.8;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+    transition: transform 250ms;
+}
+
+.information-container {
+    font-size: 40px;
+    font-weight: 700;
+}
