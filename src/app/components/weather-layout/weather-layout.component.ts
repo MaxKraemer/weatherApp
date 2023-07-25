@@ -11,6 +11,7 @@ export class WeatherLayoutComponent implements OnInit {
   constructor(public weatherService: WeatherService) { }
 
   public weatherData: any = [];
+  public data: any = [];
 
   ngOnInit(): void {
     this.getWeatherData();
@@ -22,6 +23,4 @@ export class WeatherLayoutComponent implements OnInit {
       console.log(this.weatherData, 'weatherData');     
     });
   }
-  
-
 }
