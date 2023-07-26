@@ -33,6 +33,10 @@
     }
 }
 
+.location-icon {
+    cursor: pointer;
+}
+
 .info-container {
     display: flex;
     justify-content: flex-start;

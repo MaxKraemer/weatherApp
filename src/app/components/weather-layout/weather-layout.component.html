@@ -6,8 +6,12 @@
                 <div class="date"></div>
                 <div class="location-box">
                     <div class="location-icon">
-                        <span style="font-size: 35px;" class="material-symbols-outlined">location_on</span></div>
+                        <span (click)="getLocation()" style="font-size: 35px;" class="material-symbols-outlined">location_on</span></div>
                     <div class="location">{{weatherData.name}}</div>
+                    <div *ngIf="latitude !== null && longitude !== null">
+                        Latitude: {{ latitude }}<br>
+                        Longitude: {{ longitude }}
+                      </div>
                 </div>
                
             </div>

@@ -13,6 +13,8 @@ export class WeatherLayoutComponent implements OnInit {
   public weatherData: any = [];
   public data: any = [];
   public currentCity: string = '';
+  public latitude: number | null = null;
+  public longitude: number | null = null;
 
 
   ngOnInit(): void {
@@ -27,7 +29,6 @@ export class WeatherLayoutComponent implements OnInit {
     this.weatherService.getWeatherByCityName(cityName.toLowerCase()).subscribe((data) => {
       this.weatherData = data;
       this.data = this.weatherData;
-      console.log(this.data, 'data');
     });
   }
 
@@ -54,6 +55,26 @@ export class WeatherLayoutComponent implements OnInit {
       return 'assets/sun.png';
     } else if (this.weatherData.weather[0].main === 'Snow') {
       return 'assets/snow.png';
+    }
+  }
+
+ 
+/**
+ * @returns get the current location of the user
+ */
+  getLocation(): void {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          this.latitude = position.coords.latitude;
+          this.longitude = position.coords.longitude;
+        },
+        (error) => {
+          console.error('Error getting location:', error);
+        }
+      );
+    } else {
+      console.error('Geolocation is not supported by this browser.');
     }
   }
 }
