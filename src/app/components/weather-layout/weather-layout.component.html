@@ -1,4 +1,4 @@
-<div class="weather-container" *ngIf="weatherData">
+<div class="weather-container" [ngClass]="currentWeather" *ngIf="weatherData">
     <div class="weather-field">
         <div class="weather-box-one">
             <div class="info-container">
@@ -6,7 +6,7 @@
                 <div class="date"></div>
                 <div class="location-box">
                     <div class="location-icon">
-                        <span (click)="getLocation()" style="font-size: 35px;" class="material-symbols-outlined">location_on</span></div>
+                        <span style="font-size: 35px;" class="material-symbols-outlined">location_on</span></div>
                     <div class="location">{{weatherData.name}}</div>
                     <div *ngIf="latitude !== null && longitude !== null">
                         Latitude: {{ latitude }}<br>
@@ -41,7 +41,6 @@
                 <div class="search-location">
                     <div class="change-location">
                         <input type="text" placeholder="Enter city" [(ngModel)]="currentCity" (keypress)="onKeyPress($event)">
-                        <button (click)="getWeatherData(currentCity)">Search</button>
                     </div>
                 </div>
         </div>
