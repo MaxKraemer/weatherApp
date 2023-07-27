@@ -44,7 +44,7 @@ export class WeatherLayoutComponent implements OnInit {
       this.getWeatherData(this.currentCity);
     }
   }
-  
+
   /**
    * @returns change the icon depending on the weather
    */
@@ -60,7 +60,7 @@ export class WeatherLayoutComponent implements OnInit {
         this.currentWeather = 'sun-filter';
         return 'assets/sun.png';
       case 'Snow':
-        this.currentWeather = '';
+        this.currentWeather = 'rain-filter';
         return 'assets/snow.png';
       case 'Drizzle':
         this.currentWeather = 'rain-filter';
