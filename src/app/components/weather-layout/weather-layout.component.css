@@ -7,10 +7,20 @@
 }
 
 .sun-filter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
     backdrop-filter: hue-rotate(50deg) saturate(120%) brightness(120%);
 }
 
 .rain-filter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
     backdrop-filter: hue-rotate(182deg) saturate(80%) brightness(80%);
 }
 
