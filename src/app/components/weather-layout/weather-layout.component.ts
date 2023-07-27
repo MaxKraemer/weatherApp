@@ -64,9 +64,8 @@ export class WeatherLayoutComponent implements OnInit {
    * @returns change the icon depending on the weather
    */
   public setIcon(): any {
-    if (!this.weatherData || 
-      !this.weatherData?.weather.length) {
-      return '';
+    if (!this.weatherData.weather) {
+      return;
     }
     switch (this.weatherData.weather[0].main) {
       case 'Clouds':

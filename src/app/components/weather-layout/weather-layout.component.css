@@ -12,18 +12,12 @@
 }
 
 .sun-filter {
-    position: absolute;
-    top: 0;
-    left: 0;
     height: 100vh;
     width: 100vw;
     backdrop-filter: hue-rotate(50deg) saturate(120%) brightness(120%);
 }
 
 .rain-filter {
-    position: absolute;
-    top: 0;
-    left: 0;
     height: 100vh;
     width: 100vw;
     backdrop-filter: hue-rotate(182deg) saturate(80%) brightness(80%);
@@ -51,7 +45,7 @@
     border-radius: 10px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
     transition: transform 250ms;
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 800px) {
         width: 400px;
         height: 400px;
     }
@@ -119,7 +113,13 @@ img:hover {
     border-radius: 10px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
     transition: transform 250ms;
+}
 
+.weather-box-two {
+    @media screen and (max-width: 800px) {
+        width: 400px;
+        height: 400px;
+    }
 }
 
 .weather-prospects {
