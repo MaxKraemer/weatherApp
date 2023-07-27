@@ -21,10 +21,12 @@ export class WeatherLayoutComponent implements OnInit {
   public locationData: any;
 
 
+/**
+ * @returns get the current location of the user
+ */
   ngOnInit(): void {
       this.locationService.getLocation()
       .pipe(
-        tap((data) => console.log(data, 'locationData')),
         tap((data) => {
           this.locationData = data;
           this.weatherData = data.city;
@@ -36,12 +38,14 @@ export class WeatherLayoutComponent implements OnInit {
       }); 
   }
 
+  /**
+   * @param cityName 
+   * @returns get the weather data by city name
+   */
   public getWeatherData(cityName: string): void {
     this.weatherService.getWeatherByCityName(cityName.toLowerCase()).subscribe((data) => {
       this.weatherData = data;
-      this.data = this.weatherData;
-      console.log(this.weatherData, 'weatherData');
-      
+      this.data = this.weatherData;   
     });
   }
 

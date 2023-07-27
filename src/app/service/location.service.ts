@@ -15,6 +15,10 @@ export class LocationService {
   constructor(private http: HttpClient) { }
 
 
+  /**
+   * 
+   * @returns get the current location of the user
+   */
    public getLocation(): Observable<any> {
     const configUrl = `${this.apiUrl}?apiKey=${this.apiKey}`;
     return this.http.get(configUrl);
