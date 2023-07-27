@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { map, switchMap, tap } from 'rxjs';
 import { LocationService } from 'src/app/service/location.service';
 import { WeatherService } from 'src/app/service/weather.service';
 
@@ -17,20 +18,30 @@ export class WeatherLayoutComponent implements OnInit {
   public latitude: number | null = null;
   public longitude: number | null = null;
   public currentWeather: string = '';
+  public locationData: any;
 
 
   ngOnInit(): void {
-    this.getWeatherData('Düsseldorf');
+      this.locationService.getLocation()
+      .pipe(
+        tap((data) => console.log(data, 'locationData')),
+        tap((data) => {
+          this.locationData = data;
+          this.weatherData = data.city;
+        }),
+        switchMap((data) => this.weatherService.getWeatherByCityName(data.city.toLowerCase()))
+      ).subscribe((data) => {
+        this.weatherData = data;
+        this.data = this.weatherData;
+      }); 
   }
 
-/**
- * @param cityName 
- * @returns get the weather data from the api
- */
   public getWeatherData(cityName: string): void {
     this.weatherService.getWeatherByCityName(cityName.toLowerCase()).subscribe((data) => {
       this.weatherData = data;
       this.data = this.weatherData;
+      console.log(this.weatherData, 'weatherData');
+      
     });
   }
 
@@ -49,6 +60,10 @@ export class WeatherLayoutComponent implements OnInit {
    * @returns change the icon depending on the weather
    */
   public setIcon(): any {
+    if (!this.weatherData || 
+      !this.weatherData?.weather.length) {
+      return '';
+    }
     switch (this.weatherData.weather[0].main) {
       case 'Clouds':
         this.currentWeather = '';

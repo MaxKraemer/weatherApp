@@ -7,7 +7,7 @@
                 <div class="location-box">
                     <div class="location-icon">
                         <span style="font-size: 35px;" class="material-symbols-outlined">location_on</span></div>
-                    <div class="location">{{weatherData.name}}</div>
+                    <div *ngIf="weatherData" class="location">{{weatherData.name}}</div>
                     <div *ngIf="latitude !== null && longitude !== null">
                         Latitude: {{ latitude }}<br>
                         Longitude: {{ longitude }}
@@ -16,9 +16,9 @@
                
             </div>
             <div class="content-container">
-                <div class="weather-icon"><img [src]="setIcon()" alt=""></div>
-                <div class="weather-degree">{{weatherData.main.temp | number: '1.0-0'}}°C</div>
-                <div class="weather-info">{{weatherData.weather[0].main}}</div>
+                <div *ngIf="weatherData" class="weather-icon"><img [src]="setIcon()" alt=""></div>
+                <div *ngIf="weatherData" class="weather-degree">{{weatherData.main.temp | number: '1.0-0'}}°C</div>
+                <div *ngIf="weatherData" class="weather-info">{{weatherData.weather[0].main}}</div>
             </div>
         </div>
         <div class="weather-box-two">
@@ -32,10 +32,10 @@
                     </div>
                     <div class="information-box">
                         <div class="title">0%</div>
-                        <div class="date">{{weatherData.main.humidity}} %</div>
-                        <div class="location">{{weatherData.wind.speed}} km/h</div>
-                        <div class="feels-like">{{weatherData.main.feels_like | number: '1.0-0'}}°C</div>
-                        <div class="feels-like">{{weatherData.main.temp_min | number: '1.0-0'}}°C</div>
+                        <div *ngIf="weatherData" class="date">{{weatherData.main.humidity}} %</div>
+                        <div *ngIf="weatherData" class="location">{{weatherData.wind.speed}} km/h</div>
+                        <div *ngIf="weatherData" class="feels-like">{{weatherData.main.feels_like | number: '1.0-0'}}°C</div>
+                        <div *ngIf="weatherData" class="feels-like">{{weatherData.main.temp_min | number: '1.0-0'}}°C</div>
                     </div>
                 </div>
                 <div class="search-location">
