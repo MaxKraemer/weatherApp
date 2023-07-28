@@ -80,6 +80,9 @@ export class WeatherLayoutComponent implements OnInit {
       case 'Snow':
         this.currentWeather = 'rain-filter';
         return 'assets/snow.png';
+      case 'Mist':
+        this.currentWeather = 'rain-filter';
+        return 'assets/mist.png';
       case 'Drizzle':
         this.currentWeather = 'rain-filter';
         return 'assets/heavy-rain.png';
