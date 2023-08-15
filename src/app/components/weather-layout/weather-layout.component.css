@@ -37,8 +37,6 @@
     justify-content: flex-start;
     flex-direction: column;
     padding: 40px;
-    width: 400px;
-    height: 500px;
     backdrop-filter: blur(10px);
     background-color: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -46,8 +44,8 @@
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
     transition: transform 250ms;
     @media screen and (max-width: 800px) {
-        width: 400px;
-        height: 400px;
+        width: 300px;
+        height: 300px;
     }
 }
 
@@ -105,8 +103,6 @@ img:hover {
     justify-content: flex-start;
     flex-direction: column;
     padding: 40px;
-    height: 500px;
-    width: 400px;
     backdrop-filter: blur(10px);
     background-color: #2e2d57c2;
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -117,8 +113,8 @@ img:hover {
 
 .weather-box-two {
     @media screen and (max-width: 800px) {
-        width: 400px;
-        height: 400px;
+        width: 300px;
+        height: 300px;
     }
 }
 
